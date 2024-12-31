@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from .routes import notes
 
 app = FastAPI()
 
@@ -12,6 +13,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+app.include_router(notes.router)
+
+
 @app.get("/")
 async def health_check():
     return {"status": "healthy"}
+
+
