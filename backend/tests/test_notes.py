@@ -1,9 +1,9 @@
 import pytest
 from fastapi.testclient import TestClient
-from app.main import app
-from app.services.notes_service import NotesService
-from app.services.ai_service import AIService
-from app.models.notes import NoteCreate
+from main import app
+from ..services.notes_service import NotesService
+from ..services.ai_service import AIService
+from ..models.notes import NoteCreate
 
 @pytest.fixture
 def notes_service_mock():
